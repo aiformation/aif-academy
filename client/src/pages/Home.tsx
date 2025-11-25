@@ -34,7 +34,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hidden md:block">
-              <img src="/hero-formation.jpg" alt="Formation professionnelle" className="w-full h-auto rounded-lg shadow-lg" style={{width: '800px', height: '400px'}} />
+              <img src="/hero-formation.jpg" alt="Formation professionnelle" className="w-full h-auto rounded-lg shadow-lg" style={{width: '656px', height: '400px'}} />
             </div>
           </div>
         </div>
