@@ -73,7 +73,7 @@ export default function CrEd() {
               <div className="flex flex-col gap-4">
                 <Link href="/contact">
                   <a className="inline-flex items-center px-8 py-3 bg-red-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2 w-fit">
-                    Demander une formation
+                    S'inscrire à un atelier
                     <ArrowRight size={20} />
                   </a>
                 </Link>
