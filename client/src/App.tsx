@@ -5,11 +5,21 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import AIF from "./pages/AIF";
+import IAO from "./pages/IAO";
+import CrEd from "./pages/CrEd";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/aif"} component={AIF} />
+      <Route path={"/iao"} component={IAO} />
+      <Route path={"/cred"} component={CrEd} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/contact"} component={Contact} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
