@@ -1,5 +1,5 @@
-import { Link } from "wouter";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -72,14 +72,27 @@ export default function AIF() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-secondary to-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            AIF Corporate
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl">
-            Formations professionnelles pour développer les compétences de vos équipes et leaders. Nous accompagnons les entreprises dans leur transformation et développement organisationnel.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                AIF Corporate
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                Formations professionnelles pour développer les compétences de vos équipes et leaders. Nous accompagnons les entreprises dans leur transformation et développement organisationnel.
+              </p>
+              <Link href="/contact">
+                <a className="inline-flex items-center px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2">
+                  Demander une formation
+                  <ArrowRight size={20} />
+                </a>
+              </Link>
+            </div>
+            <div className="hidden md:block">
+              <img src="/aif-leadership-hero.jpg" alt="AIF Leadership" className="w-full h-auto rounded-lg shadow-lg" />
+            </div>
+          </div>
         </div>
       </section>
 

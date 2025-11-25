@@ -1,5 +1,5 @@
-import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -9,14 +9,27 @@ export default function About() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-secondary to-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            À propos de l'Académie Internationale de Formation
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl">
-            Découvrez notre histoire, nos valeurs et notre engagement envers l'excellence en formation professionnelle et développement personnel.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                À propos de l'Académie Internationale de Formation
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                Découvrez notre histoire, nos valeurs et notre engagement envers l'excellence en formation professionnelle et développement personnel.
+              </p>
+              <Link href="/contact">
+                <a className="inline-flex items-center px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2">
+                  Nous contacter
+                  <ArrowRight size={20} />
+                </a>
+              </Link>
+            </div>
+            <div className="hidden md:block">
+              <img src="/aif-team-building.jpg" alt="AIF Team" className="w-full h-auto rounded-lg shadow-lg" />
+            </div>
+          </div>
         </div>
       </section>
 

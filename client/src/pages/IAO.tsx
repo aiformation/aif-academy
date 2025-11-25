@@ -1,5 +1,5 @@
-import { Link } from "wouter";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -52,14 +52,27 @@ export default function IAO() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            IAO - Institut des Arts Oratoires
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl">
-            Spécialiste de la prise de parole en public, du storytelling et de l'animation avec techniques théâtrales. Développez votre présence et votre impact.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                IAO - Institut des Arts Oratoires
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                Spécialiste de la prise de parole en public, du storytelling et de l'animation avec techniques théâtrales. Développez votre présence et votre impact.
+              </p>
+              <Link href="/contact">
+                <a className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2">
+                  Demander une formation
+                  <ArrowRight size={20} />
+                </a>
+              </Link>
+            </div>
+            <div className="hidden md:block">
+              <img src="/iao-public-speaking.jpg" alt="IAO Public Speaking" className="w-full h-auto rounded-lg shadow-lg" />
+            </div>
+          </div>
         </div>
       </section>
 

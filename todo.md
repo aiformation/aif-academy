@@ -48,5 +48,6 @@
 - [x] Vérifier tous les liens internes
 - [x] Tester tous les formulaires et CTA
 - [x] Vérifier le SEO basique (meta tags, titles)
-- [ ] Créer un checkpoint final
+- [x] Intégrer des images pertinentes sur toutes les pages (AIF, IAO, CrEd, About)
+- [x] Créer un checkpoint final
 - [ ] Présenter le site finalisé à l'utilisateur
