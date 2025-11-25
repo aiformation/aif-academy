@@ -11,8 +11,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+            <div className="md:col-span-2">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                 Transformez vos compétences, développez votre potentiel
               </h1>
@@ -33,8 +33,8 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="hidden md:block">
-              <img src="/hero-formation.jpg" alt="Formation professionnelle" className="w-full h-auto rounded-lg shadow-lg" style={{width: '656px'}} />
+            <div className="hidden md:block md:col-span-3">
+              <img src="/hero-formation-large.jpg" alt="Formation professionnelle" className="w-full h-auto rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
