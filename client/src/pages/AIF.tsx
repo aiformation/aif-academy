@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Linkedin } from "lucide-react";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -82,12 +82,18 @@ export default function AIF() {
               <p className="text-xl text-muted-foreground mb-8">
                 Formations professionnelles pour développer les compétences de vos équipes et leaders. Nous accompagnons les entreprises dans leur transformation et développement organisationnel.
               </p>
-              <Link href="/contact">
-                <a className="inline-flex items-center px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2">
-                  Demander une formation
-                  <ArrowRight size={20} />
+              <div className="flex flex-col gap-4">
+                <Link href="/contact">
+                  <a className="inline-flex items-center px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2 w-fit">
+                    Demander une formation
+                    <ArrowRight size={20} />
+                  </a>
+                </Link>
+                <a href="https://www.linkedin.com/company/academie-internationale-formation-cred-morocco/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors w-fit">
+                  <Linkedin size={20} />
+                  Suivre sur LinkedIn
                 </a>
-              </Link>
+              </div>
             </div>
             <div className="hidden md:block">
               <img src="/aif-leadership-hero.jpg" alt="AIF Leadership" className="w-full h-auto rounded-lg shadow-lg" />

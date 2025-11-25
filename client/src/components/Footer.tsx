@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { Linkedin, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -82,7 +83,7 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-gray-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
             <p className="text-sm text-gray-400">
               © 2025 Académie Internationale de Formation. Tous droits réservés.
             </p>
@@ -96,6 +97,50 @@ export default function Footer() {
               <a href="#" className="hover:text-accent transition-colors">
                 Politique de confidentialité
               </a>
+            </div>
+          </div>
+
+          {/* Social Media Links */}
+          <div className="border-t border-gray-700 pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* AIF Social */}
+              <div>
+                <h4 className="font-semibold text-white mb-3">AIF - LinkedIn</h4>
+                <a href="https://www.linkedin.com/company/academie-internationale-formation-cred-morocco/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gray-300 hover:text-accent transition-colors">
+                  <Linkedin size={18} />
+                  Suivre sur LinkedIn
+                </a>
+              </div>
+
+              {/* IAO Social */}
+              <div>
+                <h4 className="font-semibold text-white mb-3">IAO - Réseaux</h4>
+                <div className="space-y-2">
+                  <a href="https://www.linkedin.com/company/institut-des-arts-oratoires/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors">
+                    <Linkedin size={18} />
+                    LinkedIn
+                  </a>
+                  <a href="https://www.instagram.com/institut_arts_oratoires/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors">
+                    <Instagram size={18} />
+                    Instagram
+                  </a>
+                </div>
+              </div>
+
+              {/* CrEd Social */}
+              <div>
+                <h4 className="font-semibold text-white mb-3">CrEd - Réseaux</h4>
+                <div className="space-y-2">
+                  <a href="https://www.linkedin.com/company/credinternational/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors">
+                    <Linkedin size={18} />
+                    LinkedIn
+                  </a>
+                  <a href="https://www.instagram.com/credmorocco/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors">
+                    <Instagram size={18} />
+                    Instagram
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

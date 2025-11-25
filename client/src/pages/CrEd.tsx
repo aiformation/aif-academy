@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle, Users } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, Linkedin, Instagram } from "lucide-react";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -70,12 +70,24 @@ export default function CrEd() {
               <p className="text-xl text-muted-foreground mb-8">
                 Ateliers de théâtre créatifs pour enfants, adolescents et adultes. Développement personnel par l'art et la créativité. Opportunités de franchise à l'international.
               </p>
-              <Link href="/contact">
-                <a className="inline-flex items-center px-8 py-3 bg-red-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2">
-                  Demander une formation
-                  <ArrowRight size={20} />
-                </a>
-              </Link>
+              <div className="flex flex-col gap-4">
+                <Link href="/contact">
+                  <a className="inline-flex items-center px-8 py-3 bg-red-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2 w-fit">
+                    Demander une formation
+                    <ArrowRight size={20} />
+                  </a>
+                </Link>
+                <div className="flex gap-4">
+                  <a href="https://www.linkedin.com/company/credinternational/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
+                    <Linkedin size={20} />
+                    LinkedIn
+                  </a>
+                  <a href="https://www.instagram.com/credmorocco/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 transition-colors">
+                    <Instagram size={20} />
+                    Instagram
+                  </a>
+                </div>
+              </div>
             </div>
             <div className="hidden md:block">
               <img src="/cred-theatre-workshop.jpg" alt="CrEd Theatre" className="w-full h-auto rounded-lg shadow-lg" />

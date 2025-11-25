@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Linkedin, Instagram } from "lucide-react";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -62,12 +62,24 @@ export default function IAO() {
               <p className="text-xl text-muted-foreground mb-8">
                 Spécialiste de la prise de parole en public, du storytelling et de l'animation avec techniques théâtrales. Développez votre présence et votre impact.
               </p>
-              <Link href="/contact">
-                <a className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2">
-                  Demander une formation
-                  <ArrowRight size={20} />
-                </a>
-              </Link>
+              <div className="flex flex-col gap-4">
+                <Link href="/contact">
+                  <a className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2 w-fit">
+                    Demander une formation
+                    <ArrowRight size={20} />
+                  </a>
+                </Link>
+                <div className="flex gap-4">
+                  <a href="https://www.linkedin.com/company/institut-des-arts-oratoires/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
+                    <Linkedin size={20} />
+                    LinkedIn
+                  </a>
+                  <a href="https://www.instagram.com/institut_arts_oratoires/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 transition-colors">
+                    <Instagram size={20} />
+                    Instagram
+                  </a>
+                </div>
+              </div>
             </div>
             <div className="hidden md:block">
               <img src="/iao-public-speaking.jpg" alt="IAO Public Speaking" className="w-full h-auto rounded-lg shadow-lg" />

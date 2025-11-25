@@ -51,3 +51,9 @@
 - [x] Intégrer des images pertinentes sur toutes les pages (AIF, IAO, CrEd, About)
 - [x] Créer un checkpoint final
 - [ ] Présenter le site finalisé à l'utilisateur
+
+## Phase 8: Intégration des Réseaux Sociaux
+- [x] Ajouter les liens LinkedIn sur chaque page (AIF, IAO, CrEd)
+- [x] Ajouter les liens Instagram sur les pages IAO et CrEd
+- [x] Intégrer les icônes de réseaux sociaux dans le footer
+- [x] Tester tous les liens sociaux
