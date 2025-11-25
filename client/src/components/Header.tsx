@@ -27,7 +27,7 @@ export default function Header() {
             <a className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <img src={APP_LOGO} alt="AIF Logo" className="h-12 w-auto" />
               <span className="hidden sm:inline font-bold text-lg text-foreground">
-                AIF
+                Académie Internationale de Formation
               </span>
             </a>
           </Link>
