@@ -87,8 +87,9 @@ export default function Contact() {
                       Téléphone
                     </h3>
                     <p className="text-muted-foreground">
-                      <a href="tel:+33123456789" className="hover:text-accent transition-colors">
-                        +33 (0) 1 23 45 67 89
+                      <a href="tel:+212662158558" className="hover:text-accent transition-colors">
+                        +212 (0) 6 62 158 558<br />
+                        +212 (0) 6 61 996 016
                       </a>
                     </p>
                   </div>
@@ -103,8 +104,8 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
                     <p className="text-muted-foreground">
-                      <a href="mailto:contact@aif-academy.com" className="hover:text-accent transition-colors">
-                        contact@aif-academy.com
+                      <a href="mailto:cred@academietheatre.com" className="hover:text-accent transition-colors">
+                        cred@academietheatre.com
                       </a>
                     </p>
                   </div>
@@ -119,8 +120,8 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Adresse</h3>
                     <p className="text-muted-foreground">
-                      123 Avenue de la Formation<br />
-                      75001 Paris, France
+                      Boulevard de la Mecque, N°80<br />
+                      Quartier Californie, Casablanca - Maroc
                     </p>
                   </div>
                 </div>
