@@ -57,3 +57,6 @@
 - [x] Ajouter les liens Instagram sur les pages IAO et CrEd
 - [x] Intégrer les icônes de réseaux sociaux dans le footer
 - [x] Tester tous les liens sociaux
+
+## Phase 9: Optimisations Finales
+- [x] Agrandir la photo hero de la page d'accueil pour un meilleur équilibre
