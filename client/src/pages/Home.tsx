@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Users, Lightbulb, Sparkles } from "lucide-react";
+import { ArrowRight, Users } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -87,9 +87,7 @@ export default function Home() {
             {/* IAO Card */}
             <div className="bg-white border-2 border-border rounded-xl p-8 hover:shadow-lg transition-shadow">
               <div className="mb-4 flex items-center gap-3">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <Lightbulb className="text-white" size={24} />
-                </div>
+                <img src="/logo-iao.png" alt="IAO Logo" className="h-12 w-auto" />
                 <h3 className="text-2xl font-bold text-foreground">IAO</h3>
               </div>
               <p className="text-muted-foreground mb-4">
@@ -123,9 +121,7 @@ export default function Home() {
             {/* CrEd Card */}
             <div className="bg-white border-2 border-border rounded-xl p-8 hover:shadow-lg transition-shadow">
               <div className="mb-4 flex items-center gap-3">
-                <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center">
-                  <Sparkles className="text-white" size={24} />
-                </div>
+                <img src="/logo-cred.png" alt="CrEd Logo" className="h-12 w-auto" />
                 <h3 className="text-2xl font-bold text-foreground">CrEd</h3>
               </div>
               <p className="text-muted-foreground mb-4">
