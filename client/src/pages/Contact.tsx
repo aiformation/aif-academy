@@ -32,21 +32,40 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "aif",
-        message: "",
+    try {
+      // Send to Formspree
+      const response = await fetch("https://formspree.io/f/movzyry1", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-      setSubmitted(false);
-    }, 3000);
+
+      if (response.ok) {
+        console.log("Form submitted successfully:", formData);
+        setSubmitted(true);
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "aif",
+            message: "",
+          });
+          setSubmitted(false);
+        }, 3000);
+      } else {
+        console.error("Form submission failed");
+        alert("Une erreur s'est produite. Veuillez réessayer.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Une erreur s'est produite. Veuillez réessayer.");
+    }
   };
 
   return (

@@ -19,11 +19,9 @@ export default function About() {
               <p className="text-xl text-muted-foreground mb-8">
                 Découvrez notre histoire, nos valeurs et notre engagement envers l'excellence en formation professionnelle et développement personnel.
               </p>
-              <Link href="/contact">
-                <a className="inline-flex items-center px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2">
-                  Nous contacter
-                  <ArrowRight size={20} />
-                </a>
+              <Link href="/contact" className="inline-flex items-center px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2">
+                Nous contacter
+                <ArrowRight size={20} />
               </Link>
             </div>
             <div className="hidden md:block">
@@ -114,11 +112,9 @@ export default function About() {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   Formations en leadership, communication, intelligence émotionnelle, cohésion d'équipe et coaching individuel.
                 </p>
-                <Link href="/aif">
-                  <a className="inline-flex items-center text-accent font-semibold hover:gap-2 transition-all gap-1">
-                    En savoir plus
-                    <ArrowRight size={18} />
-                  </a>
+                <Link href="/aif" className="inline-flex items-center text-accent font-semibold hover:gap-2 transition-all gap-1">
+                  En savoir plus
+                  <ArrowRight size={18} />
                 </Link>
               </div>
               <div className="flex-shrink-0 w-full md:w-40">
@@ -140,11 +136,9 @@ export default function About() {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   Nous aidons les managers, dirigeants et professionnels à développer leur présence et leur impact à travers la communication authentique.
                 </p>
-                <Link href="/iao">
-                  <a className="inline-flex items-center text-blue-600 font-semibold hover:gap-2 transition-all gap-1">
-                    En savoir plus
-                    <ArrowRight size={18} />
-                  </a>
+                <Link href="/iao" className="inline-flex items-center text-blue-600 font-semibold hover:gap-2 transition-all gap-1">
+                  En savoir plus
+                  <ArrowRight size={18} />
                 </Link>
               </div>
               <div className="flex-shrink-0 w-full md:w-40">
@@ -166,11 +160,9 @@ export default function About() {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   En développement international avec un modèle de franchise, CrEd offre des opportunités pour les entrepreneurs passionnés par l'éducation créative.
                 </p>
-                <Link href="/cred">
-                  <a className="inline-flex items-center text-red-500 font-semibold hover:gap-2 transition-all gap-1">
-                    En savoir plus
-                    <ArrowRight size={18} />
-                  </a>
+                <Link href="/cred" className="inline-flex items-center text-red-500 font-semibold hover:gap-2 transition-all gap-1">
+                  En savoir plus
+                  <ArrowRight size={18} />
                 </Link>
               </div>
               <div className="flex-shrink-0 w-full md:w-40">
@@ -224,11 +216,9 @@ export default function About() {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Contactez-nous pour discuter de vos besoins et découvrir comment nous pouvons vous accompagner.
           </p>
-          <Link href="/contact">
-            <a className="inline-flex items-center justify-center px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2">
-              Nous contacter
-              <ArrowRight size={20} />
-            </a>
+          <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity gap-2">
+            Nous contacter
+            <ArrowRight size={20} />
           </Link>
         </div>
       </section>

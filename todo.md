@@ -60,3 +60,10 @@
 
 ## Phase 9: Optimisations Finales
 - [x] Agrandir la photo hero de la page d'accueil pour un meilleur équilibre
+
+## Phase 10: Intégration Email (Formspree)
+- [x] Modifier le composant Contact pour intégrer Formspree
+- [x] Tester le formulaire avec Formspree
+- [x] Vérifier la réception des emails
+- [x] Ajouter les confirmations de succès/erreur
+- [x] Sauvegarder les changements
