@@ -32,50 +32,56 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+    setLoading(true);
     
-    // Create a form element and submit it directly to Formspree
-    const form = document.createElement("form");
-    form.method = "POST";
-    form.action = "https://formspree.io/f/movzyry1";
-    form.style.display = "none";
-    
-    // Add form fields
-    const fields = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      subject: formData.subject,
-      message: formData.message,
-    };
-    
-    Object.entries(fields).forEach(([key, value]) => {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = key;
-      input.value = value;
-      form.appendChild(input);
-    });
-    
-    // Append form to body and submit
-    document.body.appendChild(form);
-    
-    // Show success message
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "aif",
-        message: "",
+    try {
+      // Use fetch to submit to Formspree with proper CORS handling
+      const response = await fetch("https://formspree.io/f/movzyry1", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        }),
       });
-      setSubmitted(false);
-      // Submit the form
-      form.submit();
-      document.body.removeChild(form);
-    }, 1500);
+
+      if (response.ok) {
+        // Show success message
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "aif",
+          message: "",
+        });
+        
+        // Auto-hide success message after 5 seconds
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 5000);
+      } else {
+        const data = await response.json();
+        setError(data.error || "Une erreur s'est produite. Veuillez réessayer.");
+      }
+    } catch (err) {
+      setError("Erreur de connexion. Veuillez vérifier votre connexion internet et réessayer.");
+      console.error("Form submission error:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -183,7 +189,13 @@ export default function Contact() {
                     </p>
                   </div>
                 ) : (
-                  <form className="space-y-6" onSubmit={handleSubmit}>
+                  <>
+                    {error && (
+                      <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 mb-6">
+                        <p className="text-red-800">{error}</p>
+                      </div>
+                    )}
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                     {/* Name */}
                     <div>
                       <label
@@ -289,16 +301,18 @@ export default function Contact() {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      className="w-full px-6 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                      disabled={loading}
+                      className="w-full px-6 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <Send size={20} />
-                      Envoyer le message
+                      {loading ? "Envoi en cours..." : "Envoyer le message"}
                     </button>
 
                     <p className="text-xs text-muted-foreground text-center">
                       * Champs obligatoires
                     </p>
                   </form>
+                  </>
                 )}
               </div>
             </div>
