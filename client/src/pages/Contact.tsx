@@ -32,40 +32,50 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      // Send to Formspree
-      const response = await fetch("https://formspree.io/f/movzyry1", {
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+    
+    // Create a form element and submit it directly to Formspree
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = "https://formspree.io/f/movzyry1";
+    form.style.display = "none";
+    
+    // Add form fields
+    const fields = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
+    };
+    
+    Object.entries(fields).forEach(([key, value]) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    });
+    
+    // Append form to body and submit
+    document.body.appendChild(form);
+    
+    // Show success message
+    setSubmitted(true);
+    setTimeout(() => {
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "aif",
+        message: "",
       });
-
-      if (response.ok) {
-        console.log("Form submitted successfully:", formData);
-        setSubmitted(true);
-        setTimeout(() => {
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            subject: "aif",
-            message: "",
-          });
-          setSubmitted(false);
-        }, 3000);
-      } else {
-        console.error("Form submission failed");
-        alert("Une erreur s'est produite. Veuillez réessayer.");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Une erreur s'est produite. Veuillez réessayer.");
-    }
+      setSubmitted(false);
+      // Submit the form
+      form.submit();
+      document.body.removeChild(form);
+    }, 1500);
   };
 
   return (
@@ -173,7 +183,7 @@ export default function Contact() {
                     </p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     {/* Name */}
                     <div>
                       <label
