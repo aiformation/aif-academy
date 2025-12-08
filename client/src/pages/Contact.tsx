@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+// Initialize EmailJS
+emailjs.init("Uh60NF2i1LAsjaHmYXNTBF6VAVV86fFDTfD");
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -41,43 +45,36 @@ export default function Contact() {
     setLoading(true);
     
     try {
-      // Use fetch to submit to Formspree with proper CORS handling
-      const response = await fetch("https://formspree.io/f/movzyry1", {
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
+      // Send email using EmailJS
+      await emailjs.send(
+        "service_aiformation",
+        "template_contact",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
           phone: formData.phone,
           subject: formData.subject,
           message: formData.message,
-        }),
-      });
+          to_email: "cred@academietheatre.com",
+        }
+      );
 
-      if (response.ok) {
-        // Show success message
-        setSubmitted(true);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "aif",
-          message: "",
-        });
-        
-        // Auto-hide success message after 5 seconds
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 5000);
-      } else {
-        const data = await response.json();
-        setError(data.error || "Une erreur s'est produite. Veuillez réessayer.");
-      }
+      // Show success message
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "aif",
+        message: "",
+      });
+      
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
     } catch (err) {
-      setError("Erreur de connexion. Veuillez vérifier votre connexion internet et réessayer.");
+      setError("Erreur lors de l'envoi du message. Veuillez réessayer.");
       console.error("Form submission error:", err);
     } finally {
       setLoading(false);
